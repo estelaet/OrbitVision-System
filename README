@@ -1,0 +1,212 @@
+<div align="center">
+
+# 🚀 OrbitVision-System
+
+### Advanced Aerospace Intelligence & AI Vision Platform
+
+<img src="https://github.com/estelaet/OrbitVision-System/blob/main/Capture.PNG" width="100%" alt="OrbitVision Screenshot"/>
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![AI](https://img.shields.io/badge/AI-Computer%20Vision-ff4b4b?style=flat-square)
+![Aerospace](https://img.shields.io/badge/Aerospace-Simulation-111111?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
+
+</div>
+
+---
+
+## 🌌 About
+
+OrbitVision-System is an advanced aerospace-focused platform that combines:
+
+- 🛰️ Orbital simulation
+- 🤖 Artificial Intelligence
+- 👁️ Computer Vision
+- 📡 Telemetry analytics
+- 🚁 Drone swarm intelligence
+- 🌍 Real-time visualization
+
+Built for developers, researchers, aerospace enthusiasts, and students interested in the future of intelligent aerospace systems.
+
+---
+
+# ✨ Core Features
+
+<table>
+<tr>
+<td width="50%">
+
+## 🛰️ Orbital Systems
+- Real-time orbit simulation
+- Satellite trajectory tracking
+- Aerospace visualization
+- Orbital analytics
+
+</td>
+
+<td width="50%">
+
+## 🤖 AI Vision
+- Object detection
+- AI recognition systems
+- Drone vision analysis
+- Computer vision pipelines
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+## 📡 Telemetry
+- Live monitoring dashboard
+- Sensor analytics
+- Mission statistics
+- Data visualization
+
+</td>
+
+<td width="50%">
+
+## 🚁 Drone Swarms
+- Swarm coordination
+- Autonomous movement
+- Multi-agent simulation
+- AI behavior systems
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🛠️ Tech Stack
+
+```txt
+Python
+OpenCV
+TensorFlow / PyTorch
+NumPy
+Matplotlib
+PyQt / Tkinter
+Orbital Mechanics Libraries
+AI & Simulation Frameworks
+```
+
+---
+
+# 📂 Project Structure
+
+```bash
+OrbitVision-System/
+│
+├── assets/               # Images and resources
+├── models/               # AI models
+├── simulations/          # Aerospace simulations
+├── telemetry/            # Telemetry processing
+├── vision/               # Computer vision modules
+├── dashboard/            # GUI components
+├── utils/                # Helper utilities
+│
+├── main.py               # Main application
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# ⚡ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/estelaet/OrbitVision-System.git
+cd OrbitVision-System
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run Project
+
+```bash
+python main.py
+```
+
+---
+
+# 🖥️ Platform Preview
+
+<div align="center">
+
+<img src="https://github.com/estelaet/OrbitVision-System/blob/main/Capture.PNG" width="95%" alt="OrbitVision Preview"/>
+
+</div>
+
+---
+
+# 🎯 Applications
+
+- 🛰️ Satellite monitoring systems
+- 🤖 AI-powered aerospace detection
+- 🚁 Drone swarm research
+- 📡 Telemetry analytics
+- 🌍 Real-time mission visualization
+- 🧠 Aerospace AI experimentation
+
+---
+
+# 🧠 Future Roadmap
+
+- [ ] Live ISS tracking
+- [ ] Interactive 3D Earth
+- [ ] Reinforcement learning drones
+- [ ] Swarm AI coordination engine
+- [ ] GPU acceleration
+- [ ] ROS integration
+- [ ] Web dashboard deployment
+- [ ] Real-time satellite APIs
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+```bash
+# Fork repository
+# Create feature branch
+# Commit changes
+# Push branch
+# Open Pull Request
+```
+
+---
+
+# 📜 License
+
+Licensed under the **MIT License**.
+
+---
+
+<div align="center">
+
+# 🌠 Vision
+
+### Exploring Space Through AI & Vision
+
+OrbitVision-System aims to become a next-generation open-source aerospace intelligence platform integrating AI, simulation, and autonomous aerospace systems.
+
+<br>
+
+Made with 🚀 by **Estelaet**
+
+### 🔗 Repository
+https://github.com/estelaet/OrbitVision-System
+
+</div>
