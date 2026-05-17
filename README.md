@@ -2,15 +2,15 @@
 
 <div align="center">
 
-### Advanced Satellite Tracking & Orbital Monitoring Platform
+### Real-Time Satellite Tracking & Orbital Monitoring Platform
 
-<img src="https://github.com/estelaet/OrbitVision-System/blob/main/Capture.PNG" alt="OrbitVision Screenshot" width="100%">
+<img src="./Capture.PNG" alt="OrbitVision Screenshot" width="100%">
 
 <br><br>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=flat-square&logo=flask)
 ![Satellite](https://img.shields.io/badge/Satellite-Tracking-0ea5e9?style=flat-square)
-![Orbit](https://img.shields.io/badge/Orbital-Monitoring-111111?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
 
 </div>
@@ -19,15 +19,15 @@
 
 # 🌌 About
 
-OrbitVision-System is a real-time satellite tracking and orbital monitoring platform built with Python.
+OrbitVision-System is a modern satellite tracking and orbital monitoring platform built with Python and Flask.
 
 The system provides:
-- 🛰️ Live satellite tracking
-- 🌍 Orbital visualization
+- 🛰️ Real-time satellite tracking
+- 🌍 Interactive globe visualization
 - 📡 Telemetry monitoring
-- 📈 Satellite analytics
-- 🧭 Trajectory prediction
-- 🖥️ Interactive dashboard interface
+- 📈 Orbital analytics
+- 🧭 Orbit prediction systems
+- 🌐 Live satellite mapping
 
 Designed for aerospace enthusiasts, researchers, and developers interested in orbital systems and space technology.
 
@@ -36,28 +36,28 @@ Designed for aerospace enthusiasts, researchers, and developers interested in or
 # ✨ Features
 
 ## 🛰️ Satellite Tracking
-- Real-time satellite monitoring
-- Orbit path visualization
-- Position tracking
-- Trajectory prediction
-
-## 🌍 Orbital Visualization
-- Earth-centered orbital display
-- Satellite movement simulation
-- Live orbit rendering
+- Live satellite position tracking
+- Real-time orbit updates
 - Space object monitoring
+- Orbit trajectory visualization
 
-## 📡 Telemetry Dashboard
+## 🌍 Interactive Visualization
+- 3D globe rendering
+- Interactive satellite maps
+- Real-time orbital display
+- Dynamic tracking interface
+
+## 📡 Telemetry Monitoring
 - Live telemetry data
-- Signal monitoring
-- Data analytics
-- Interactive controls
+- Satellite analytics
+- Monitoring dashboard
+- Tracking statistics
 
-## 📊 Analytics System
-- Orbital statistics
-- Satellite data processing
-- Tracking analysis
-- Performance monitoring
+## ⚡ Web Platform
+- Flask backend
+- Responsive UI
+- Interactive frontend
+- API-based architecture
 
 ---
 
@@ -65,12 +65,13 @@ Designed for aerospace enthusiasts, researchers, and developers interested in or
 
 ```txt
 Python
-OpenCV
-NumPy
-Matplotlib
-PyQt / Tkinter
+Flask
+JavaScript
+HTML5
+CSS3
+OpenLayers / Globe Visualization
+Satellite APIs
 Orbital Mechanics Libraries
-Satellite Tracking APIs
 ```
 
 ---
@@ -80,16 +81,32 @@ Satellite Tracking APIs
 ```bash
 OrbitVision-System/
 │
-├── assets/               # Images and resources
-├── telemetry/            # Telemetry processing
-├── tracking/             # Satellite tracking modules
-├── visualization/        # Orbit visualization system
-├── dashboard/            # GUI dashboard
-├── utils/                # Utility functions
+├── api/
+│   ├── __init__.py
+│   ├── analytics.py
+│   ├── celestrak.py
+│   ├── ethiopia.py
+│   ├── providers.py
+│   └── skytrack.py
 │
-├── main.py               # Main application
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       ├── app.js
+│       ├── globe.js
+│       └── map.js
+│
+├── templates/
+│   └── index.html
+│
+├── Capture.PNG
+├── README.md
+├── app.py
 ├── requirements.txt
-└── README.md
+├── runtime.txt
+└── vercel.json
 ```
 
 ---
@@ -109,11 +126,25 @@ cd OrbitVision-System
 pip install -r requirements.txt
 ```
 
-## Run Project
+## Run Application
 
 ```bash
-python main.py
+python app.py
 ```
+
+---
+
+# 🌐 Deployment
+
+This project supports deployment using:
+
+- Vercel
+- Flask
+- Python Runtime
+
+Configuration files included:
+- `vercel.json`
+- `runtime.txt`
 
 ---
 
@@ -121,7 +152,7 @@ python main.py
 
 <div align="center">
 
-<img src="https://github.com/estelaet/OrbitVision-System/blob/main/Capture.PNG" alt="OrbitVision Preview" width="95%">
+<img src="./Capture.PNG" alt="OrbitVision Preview" width="95%">
 
 </div>
 
@@ -130,24 +161,24 @@ python main.py
 # 🎯 Applications
 
 - 🛰️ Satellite orbit tracking
-- 🌍 Orbital monitoring systems
-- 📡 Telemetry analysis
-- 🧭 Space object tracking
-- 📈 Satellite analytics
+- 🌍 Orbital visualization systems
+- 📡 Telemetry monitoring
 - 🚀 Aerospace research
+- 🧭 Space object tracking
+- 📈 Orbital analytics
 
 ---
 
 # 🧠 Future Roadmap
 
 - [ ] Live ISS tracking
-- [ ] Interactive 3D Earth visualization
-- [ ] Real-time satellite APIs
+- [ ] 3D Earth rendering improvements
 - [ ] Advanced telemetry analytics
-- [ ] Space debris tracking
 - [ ] Multi-satellite monitoring
-- [ ] Web dashboard deployment
-- [ ] GPU acceleration
+- [ ] Real-time space weather data
+- [ ] Space debris tracking
+- [ ] AI-powered orbit prediction
+- [ ] Mobile support
 
 ---
 
@@ -179,13 +210,13 @@ Licensed under the **MIT License**.
 
 # 🌠 Vision
 
-OrbitVision-System aims to become a modern open-source satellite tracking and orbital intelligence platform capable of real-time monitoring, visualization, and analytics for space systems.
+OrbitVision-System aims to become a modern open-source satellite intelligence and orbital tracking platform capable of real-time monitoring, visualization, and analytics for global space systems.
 
 ---
 
 <div align="center">
 
-## 🛰️ Tracking Space in Real Time
+## 🚀 Tracking Space in Real Time
 
 Made with ❤️ by **Estelaet**
 
