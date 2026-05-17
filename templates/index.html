@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrbitVision — Earth &amp; Satellite Intelligence System</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛸</text></svg>">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Leaflet.js (2D map — primary view) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Three.js (3D globe — optional, needs WebGL) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <!-- App styles -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+    /* Leaflet overrides */
+    .leaflet-container { background: #020408 !important; font-family: 'JetBrains Mono', monospace !important; }
+    .leaflet-popup-content-wrapper { background: #060d14; border: 1px solid #0e2a3f; color: #c8dff0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+    .leaflet-popup-tip { background: #060d14; }
+    .leaflet-popup-close-button { color: #567a94 !important; }
+    .leaflet-tooltip { background: rgba(6,13,20,0.95); border: 1px solid #00d4ff; color: #c8dff0; font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+    .leaflet-control-zoom a { background: #060d14; color: #00d4ff; border-color: #0e2a3f; font-family: 'JetBrains Mono', monospace; }
+    .leaflet-control-zoom a:hover { background: #0a1520; }
+    .leaflet-control-attribution { background: rgba(6,13,20,0.7) !important; color: #567a94 !important; font-size: 8px; }
+    .leaflet-control-attribution a { color: #00d4ff !important; }
+    #map { position: absolute; inset: 0; z-index: 1; }
+    #globe-canvas { position: absolute; inset: 0; z-index: 1; display: none; }
+    #map-container { position: relative; flex: 1; overflow: hidden; background: #020408; }
+  </style>
+</head>
+<body>
+
+<!-- ── Loading Screen ── -->
+<div id="loading-screen">
+  <div class="loading-logo">🛸</div>
+  <div class="loading-title">ORBITVISION</div>
+  <div class="loading-sub">EARTH &amp; SATELLITE INTELLIGENCE SYSTEM v2.0</div>
+  <div class="loading-progress"><div class="loading-bar"></div></div>
+  <div class="loading-steps" id="boot-step">Initializing orbital mechanics…</div>
+  <div style="margin-top:16px;display:flex;gap:12px;font-size:9px;color:#567a94;">
+    <span>SGP4 ENGINE</span>
+    <span>CELESTRAK</span>
+    <span>IVANSTANOJEVIC</span>
+    <span>OPEN NOTIFY</span>
+    <span>AMSAT</span>
+  </div>
+</div>
+
+<!-- ── App Shell ── -->
+<div id="app">
+
+  <!-- ── Topbar ── -->
+  <div id="topbar">
+    <div class="logo">
+      <span class="logo-icon">🌍</span>
+      <div>
+        <div>ORBITVISION</div>
+        <div class="logo-sub">EARTH &amp; SATELLITE INTELLIGENCE SYSTEM</div>
+      </div>
+    </div>
+    <div class="status-indicator"><div class="dot" id="dot-sgp4"></div><span>SGP4</span></div>
+    <div class="status-indicator"><div class="dot" id="dot-celestrak"></div><span>CELESTRAK</span></div>
+    <div class="status-indicator"><div class="dot" id="dot-amsat"></div><span>AMSAT</span></div>
+    <div class="status-indicator"><div class="dot warn" id="dot-n2yo"></div><span>N2YO</span></div>
+    <div class="topbar-sep"></div>
+    <div id="people-badge" style="font-size:10px;color:#00ff88;display:flex;align-items:center;gap:4px;">
+      <span>👨‍🚀</span><span id="people-count">?</span><span style="color:#567a94">in space</span>
+    </div>
+    <span id="sat-count-badge">0</span>
+    <div id="live-clock">--:--:-- UTC</div>
+    <button onclick="zoomIn()" title="Zoom In" class="top-btn">+</button>
+    <button onclick="zoomOut()" title="Zoom Out" class="top-btn">−</button>
+    <button onclick="resetView()" title="Reset view" class="top-btn" style="font-size:9px;padding:4px 8px;">RESET</button>
+  </div>
+
+  <div id="main">
+
+    <!-- ── Sidebar ── -->
+    <div id="sidebar">
+      <div class="nav-section">
+        <div class="nav-section-label">Tracking</div>
+        <div class="nav-item active" data-view="satellites" onclick="setView('satellites')">
+          <span class="nav-icon">🛰</span><span>SkyTrack Live</span>
+        </div>
+        <div class="nav-item" data-view="search" onclick="setView('search')">
+          <span class="nav-icon">🔎</span><span>Orbital Search</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Intelligence</div>
+        <div class="nav-item" data-view="ethiopia" onclick="setView('ethiopia')">
+          <span class="nav-icon">🌍</span><span>EthioPass</span>
+        </div>
+        <div class="nav-item" data-view="analytics" onclick="setView('analytics')">
+          <span class="nav-icon">📊</span><span>Analytics</span>
+        </div>
+        <div class="nav-item" data-view="security" onclick="setView('security')">
+          <span class="nav-icon">🛡</span><span>SpaceNet Security</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Network</div>
+        <div class="nav-item" data-view="providers" onclick="setView('providers')">
+          <span class="nav-icon">🔗</span><span>Data Providers</span>
+        </div>
+        <div class="nav-item" data-view="stations" onclick="setView('stations')">
+          <span class="nav-icon">🗺</span><span>TerraLink</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-label">Controls</div>
+        <div class="nav-item" data-view="filters" onclick="setView('filters')">
+          <span class="nav-icon">🎛</span><span>FilterMatrix</span>
+        </div>
+        <div class="nav-item" data-view="alerts" onclick="setView('alerts')">
+          <span class="nav-icon">🔔</span><span>OrbitAlert</span>
+          <span class="nav-badge" id="alert-badge" style="display:none">0</span>
+        </div>
+        <div class="nav-item" data-view="replay" onclick="setView('replay')">
+          <span class="nav-icon">⏳</span><span>OrbitReplay</span>
+        </div>
+        <div class="nav-item" data-view="settings" onclick="setView('settings')">
+          <span class="nav-icon">⚙</span><span>Mission Control</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Map / Globe ── -->
+    <div id="map-container">
+      <!-- 2D Leaflet map (primary) -->
+      <div id="map"></div>
+      <!-- 3D Three.js globe (optional) -->
+      <div id="globe-canvas"></div>
+
+      <!-- HUDs -->
+      <div class="map-hud" id="iss-hud">
+        <div class="hud-title">🛸 ISS LIVE</div>
+        <div id="iss-hud-body">Loading…</div>
+      </div>
+      <div class="map-hud" id="orbit-hud" style="left:12px;top:12px;">
+        <div class="hud-title">📡 SKYTRACK</div>
+        <div id="orbit-hud-body">Initializing…</div>
+      </div>
+      <div class="map-hud" id="coords-hud" style="bottom:70px;right:12px;">
+        <div class="hud-title" id="view-mode-label">🌍 2D MAP</div>
+        <div id="coords-body">Click map · scroll to zoom</div>
+      </div>
+
+      <!-- View Mode Switcher (3D is default; JS marks active after boot) -->
+      <div id="view-controls">
+        <button class="view-btn" data-mode="map" onclick="switchViewMode('map',this)">🌍 MAP</button>
+        <button class="view-btn" data-mode="3d" onclick="switchViewMode('3d',this)">🌐 3D</button>
+        <button class="view-btn" data-mode="night" onclick="switchViewMode('night',this)">🌗 NIGHT</button>
+        <button class="view-btn" data-mode="orbit" onclick="switchViewMode('orbit',this)">🪐 ORBIT</button>
+        <button class="view-btn" data-mode="security" onclick="switchViewMode('security',this)">🛡 SEC</button>
+        <button class="view-btn" data-mode="replay" onclick="switchViewMode('replay',this)">⏳ REPLAY</button>
+      </div>
+
+      <!-- Replay controls -->
+      <div id="time-controls">
+        <span style="font-size:10px;color:var(--text-dim)">⏳ REPLAY</span>
+        <input type="range" id="time-slider" min="-360" max="0" value="0" oninput="updateReplayLabel(this.value)">
+        <span id="time-label" style="font-size:10px;color:var(--accent);min-width:80px;">Now</span>
+        <button onclick="playReplay()" class="replay-play-btn">▶ PLAY</button>
+      </div>
+    </div>
+
+    <!-- ── Right Panel ── -->
+    <div id="right-panel">
+      <div id="panel-header">
+        <div id="panel-title">🛰 SkyTrack Live</div>
+        <button onclick="loadSatellites()" class="refresh-btn" title="Refresh">↻</button>
+      </div>
+      <div id="panel-content">
+
+        <!-- SkyTrack panel -->
+        <div class="panel-view" id="panel-satellites">
+          <div id="catalog-tabs" style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;"></div>
+          <div id="sat-list"><div class="loading-msg">Loading satellites…</div></div>
+        </div>
+
+        <!-- Satellite detail (SatIntel) -->
+        <div class="panel-view" id="panel-satellite-detail" style="display:none;"></div>
+
+        <!-- Search -->
+        <div class="panel-view" id="panel-search" style="display:none;">
+          <input id="search-input" type="text" placeholder="🔎 Search satellites (ISS, NOAA, GPS…)" oninput="onSearchInput(this.value)" autocomplete="off">
+          <div id="search-count" class="search-results-count"></div>
+          <div id="search-results"></div>
+        </div>
+
+        <!-- Ethiopia -->
+        <div class="panel-view" id="panel-ethiopia" style="display:none;">
+          <div class="panel-section">
+            <div class="panel-section-title">Observer Location</div>
+            <div style="font-size:10px;color:var(--accent2);">📍 Addis Ababa, Ethiopia · 9.04°N, 38.74°E · 2355m ASL</div>
+            <div style="font-size:9px;color:var(--text-dim);margin-top:4px;">Min elevation: 10° above horizon</div>
+          </div>
+          <div id="ethiopia-content"><div class="loading-msg">Computing passes…</div></div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="panel-view" id="panel-analytics" style="display:none;">
+          <div id="analytics-content"><div class="loading-msg">Loading analytics…</div></div>
+        </div>
+
+        <!-- Filters -->
+        <div class="panel-view" id="panel-filters" style="display:none;">
+          <div id="filters-content"><div class="loading-msg">Loading filters…</div></div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="panel-view" id="panel-alerts" style="display:none;">
+          <div id="alerts-content"><div class="loading-msg">No alerts yet</div></div>
+        </div>
+
+        <!-- Ground Stations -->
+        <div class="panel-view" id="panel-stations" style="display:none;">
+          <div class="panel-section"><div class="panel-section-title">Global Ground Station Network</div></div>
+          <div id="stations-content"><div class="loading-msg">Loading stations…</div></div>
+        </div>
+
+        <!-- Security -->
+        <div class="panel-view" id="panel-security" style="display:none;">
+          <div id="security-content"><div class="loading-msg">Scanning channels…</div></div>
+        </div>
+
+        <!-- Providers -->
+        <div class="panel-view" id="panel-providers" style="display:none;">
+          <div id="providers-content"><div class="loading-msg">Loading providers…</div></div>
+        </div>
+
+        <!-- Replay -->
+        <div class="panel-view" id="panel-replay" style="display:none;">
+          <div id="replay-content"></div>
+        </div>
+
+        <!-- Settings -->
+        <div class="panel-view" id="panel-settings" style="display:none;">
+          <div id="settings-content"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/static/js/map.js"></script>
+<script src="/static/js/globe.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
