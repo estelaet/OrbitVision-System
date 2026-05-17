@@ -1,16 +1,16 @@
-# 🚀 OrbitVision-System
+# 🛰️ OrbitVision-System
 
 <div align="center">
 
-### Advanced Aerospace Intelligence & AI Vision Platform
+### Advanced Satellite Tracking & Orbital Monitoring Platform
 
 <img src="https://github.com/estelaet/OrbitVision-System/blob/main/Capture.PNG" alt="OrbitVision Screenshot" width="100%">
 
 <br><br>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
-![AI](https://img.shields.io/badge/AI-Computer%20Vision-ff4b4b?style=flat-square)
-![Aerospace](https://img.shields.io/badge/Aerospace-Simulation-111111?style=flat-square)
+![Satellite](https://img.shields.io/badge/Satellite-Tracking-0ea5e9?style=flat-square)
+![Orbit](https://img.shields.io/badge/Orbital-Monitoring-111111?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
 
 </div>
@@ -19,42 +19,45 @@
 
 # 🌌 About
 
-OrbitVision-System is an advanced aerospace-focused platform that combines artificial intelligence, orbital simulation, telemetry systems, and computer vision into one intelligent environment.
+OrbitVision-System is a real-time satellite tracking and orbital monitoring platform built with Python.
 
-Designed for:
-- Aerospace enthusiasts
-- AI researchers
-- Robotics developers
-- Computer vision engineers
-- Students & innovators
+The system provides:
+- 🛰️ Live satellite tracking
+- 🌍 Orbital visualization
+- 📡 Telemetry monitoring
+- 📈 Satellite analytics
+- 🧭 Trajectory prediction
+- 🖥️ Interactive dashboard interface
+
+Designed for aerospace enthusiasts, researchers, and developers interested in orbital systems and space technology.
 
 ---
 
 # ✨ Features
 
-## 🛰️ Orbital Systems
-- Real-time orbit simulation
-- Satellite trajectory tracking
-- Aerospace visualization
-- Orbital analytics
+## 🛰️ Satellite Tracking
+- Real-time satellite monitoring
+- Orbit path visualization
+- Position tracking
+- Trajectory prediction
 
-## 🤖 AI Vision
-- Object detection
-- AI recognition systems
-- Drone vision analysis
-- Computer vision pipelines
+## 🌍 Orbital Visualization
+- Earth-centered orbital display
+- Satellite movement simulation
+- Live orbit rendering
+- Space object monitoring
 
 ## 📡 Telemetry Dashboard
-- Live monitoring
-- Sensor analytics
-- Mission statistics
-- Data visualization
+- Live telemetry data
+- Signal monitoring
+- Data analytics
+- Interactive controls
 
-## 🚁 Drone Swarm Simulation
-- Swarm coordination
-- Autonomous movement
-- Multi-agent simulation
-- AI behavior systems
+## 📊 Analytics System
+- Orbital statistics
+- Satellite data processing
+- Tracking analysis
+- Performance monitoring
 
 ---
 
@@ -63,12 +66,11 @@ Designed for:
 ```txt
 Python
 OpenCV
-TensorFlow / PyTorch
 NumPy
 Matplotlib
 PyQt / Tkinter
 Orbital Mechanics Libraries
-AI & Simulation Frameworks
+Satellite Tracking APIs
 ```
 
 ---
@@ -79,11 +81,10 @@ AI & Simulation Frameworks
 OrbitVision-System/
 │
 ├── assets/               # Images and resources
-├── models/               # AI models
-├── simulations/          # Aerospace simulations
-├── telemetry/            # Telemetry systems
-├── vision/               # Computer vision modules
-├── dashboard/            # GUI components
+├── telemetry/            # Telemetry processing
+├── tracking/             # Satellite tracking modules
+├── visualization/        # Orbit visualization system
+├── dashboard/            # GUI dashboard
 ├── utils/                # Utility functions
 │
 ├── main.py               # Main application
@@ -128,25 +129,25 @@ python main.py
 
 # 🎯 Applications
 
-- 🛰️ Satellite monitoring systems
-- 🤖 AI-powered aerospace detection
-- 🚁 Drone swarm research
-- 📡 Telemetry analytics
-- 🌍 Real-time mission visualization
-- 🧠 Aerospace AI experimentation
+- 🛰️ Satellite orbit tracking
+- 🌍 Orbital monitoring systems
+- 📡 Telemetry analysis
+- 🧭 Space object tracking
+- 📈 Satellite analytics
+- 🚀 Aerospace research
 
 ---
 
 # 🧠 Future Roadmap
 
 - [ ] Live ISS tracking
-- [ ] Interactive 3D Earth
-- [ ] Reinforcement learning drones
-- [ ] Swarm AI coordination engine
-- [ ] GPU acceleration
-- [ ] ROS integration
-- [ ] Web dashboard deployment
+- [ ] Interactive 3D Earth visualization
 - [ ] Real-time satellite APIs
+- [ ] Advanced telemetry analytics
+- [ ] Space debris tracking
+- [ ] Multi-satellite monitoring
+- [ ] Web dashboard deployment
+- [ ] GPU acceleration
 
 ---
 
@@ -178,20 +179,13 @@ Licensed under the **MIT License**.
 
 # 🌠 Vision
 
-OrbitVision-System aims to become a next-generation open-source aerospace intelligence platform integrating:
-
-- AI copilots
-- Autonomous drone fleets
-- Orbital analytics
-- Aerospace computer vision
-- Real-time simulations
-- Mission control systems
+OrbitVision-System aims to become a modern open-source satellite tracking and orbital intelligence platform capable of real-time monitoring, visualization, and analytics for space systems.
 
 ---
 
 <div align="center">
 
-## 🚀 Exploring Space Through AI & Vision
+## 🛰️ Tracking Space in Real Time
 
 Made with ❤️ by **Estelaet**
 
