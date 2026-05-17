@@ -1,6 +1,6 @@
-<div align="center">
-
 # 🚀 OrbitVision-System
+
+<div align="center">
 
 ### Advanced Aerospace Intelligence & AI Vision Platform
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 🌌 About
+# 🌌 About
 
 OrbitVision-System is an advanced aerospace-focused platform that combines:
 
@@ -28,15 +28,11 @@ OrbitVision-System is an advanced aerospace-focused platform that combines:
 - 🚁 Drone swarm intelligence
 - 🌍 Real-time visualization
 
-Built for developers, researchers, aerospace enthusiasts, and students interested in the future of intelligent aerospace systems.
+Built for developers, researchers, aerospace enthusiasts, and students interested in intelligent aerospace systems.
 
 ---
 
-# ✨ Core Features
-
-<table>
-<tr>
-<td width="50%">
+# ✨ Features
 
 ## 🛰️ Orbital Systems
 - Real-time orbit simulation
@@ -44,41 +40,23 @@ Built for developers, researchers, aerospace enthusiasts, and students intereste
 - Aerospace visualization
 - Orbital analytics
 
-</td>
-
-<td width="50%">
-
 ## 🤖 AI Vision
 - Object detection
 - AI recognition systems
 - Drone vision analysis
 - Computer vision pipelines
 
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-## 📡 Telemetry
-- Live monitoring dashboard
+## 📡 Telemetry Dashboard
+- Live monitoring
 - Sensor analytics
 - Mission statistics
 - Data visualization
 
-</td>
-
-<td width="50%">
-
-## 🚁 Drone Swarms
+## 🚁 Drone Swarm Simulation
 - Swarm coordination
 - Autonomous movement
 - Multi-agent simulation
 - AI behavior systems
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -105,10 +83,10 @@ OrbitVision-System/
 ├── assets/               # Images and resources
 ├── models/               # AI models
 ├── simulations/          # Aerospace simulations
-├── telemetry/            # Telemetry processing
+├── telemetry/            # Telemetry systems
 ├── vision/               # Computer vision modules
 ├── dashboard/            # GUI components
-├── utils/                # Helper utilities
+├── utils/                # Utility functions
 │
 ├── main.py               # Main application
 ├── requirements.txt
@@ -194,17 +172,24 @@ Licensed under the **MIT License**.
 
 ---
 
-<div align="center">
-
 # 🌠 Vision
 
-### Exploring Space Through AI & Vision
+OrbitVision-System aims to become a next-generation open-source aerospace intelligence platform integrating:
 
-OrbitVision-System aims to become a next-generation open-source aerospace intelligence platform integrating AI, simulation, and autonomous aerospace systems.
+- AI copilots
+- Autonomous drone fleets
+- Orbital analytics
+- Aerospace computer vision
+- Real-time simulations
+- Mission control systems
 
-<br>
+---
 
-Made with 🚀 by **Estelaet**
+<div align="center">
+
+## 🚀 Exploring Space Through AI & Vision
+
+Made with ❤️ by **Estelaet**
 
 ### 🔗 Repository
 https://github.com/estelaet/OrbitVision-System
